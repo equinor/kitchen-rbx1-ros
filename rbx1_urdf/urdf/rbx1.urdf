@@ -1,4 +1,9 @@
 <robot name="rbx1_urdf">
+  <link name="world"/>
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
   <link name="base_link">
     <inertial>
       <origin xyz="0.034155 -0.20591 -0.049641" rpy="0 0 0" />
@@ -41,7 +46,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/link_1_shoulder.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/link_1_shoulder.STL" />
       </geometry>
     </collision>
   </link>
@@ -71,7 +76,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/link_2_arm.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/link_2_arm.STL" />
       </geometry>
     </collision>
   </link>
@@ -101,7 +106,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/link_3_upper_forearm.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/link_3_upper_forearm.STL" />
       </geometry>
     </collision>
   </link>
@@ -131,7 +136,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/link_4_forearm.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/link_4_forearm.STL" />
       </geometry>
     </collision>
   </link>
@@ -161,7 +166,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/link_5_wrist.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/link_5_wrist.STL" />
       </geometry>
     </collision>
   </link>
@@ -176,8 +181,8 @@
     <inertial>
       <origin xyz="-0.011366 0.00012239 0.0078967" rpy="0 0 0" />
       <mass value="0.04"/>
-      <inertia ixx="0" ixy="0" ixz="40"
-       iyy="0" iyz="0" izz="0" />
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0" izz="1.0" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -191,7 +196,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/link_6_hand.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/link_6_hand.STL" />
       </geometry>
     </collision>
   </link>
@@ -220,7 +225,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/gripper_servo_gear.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/gripper_servo_gear.STL" />
       </geometry>
     </collision>
   </link>
@@ -250,7 +255,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/tip_gripper_servo.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/tip_gripper_servo.STL" />
       </geometry>
     </collision>
   </link>
@@ -280,7 +285,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/gripper_idol_gear.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/gripper_idol_gear.STL" />
       </geometry>
     </collision>
   </link>
@@ -309,7 +314,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/tip_gripper_idol.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/tip_gripper_idol.STL" />
       </geometry>
     </collision>
   </link>
@@ -340,7 +345,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/pivot_arm_gripper_servo.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/pivot_arm_gripper_servo.STL" />
       </geometry>
     </collision>
   </link>
@@ -371,7 +376,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/pivot_arm_gripper_idol.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/pivot_arm_gripper_idol.STL" />
       </geometry>
     </collision>
   </link>
