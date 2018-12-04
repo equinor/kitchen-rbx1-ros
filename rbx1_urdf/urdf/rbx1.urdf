@@ -23,7 +23,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://rbx1_urdf/meshes/base_link.STL" />
+        <mesh filename="package://rbx1_urdf/meshes/collision/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -56,6 +56,7 @@
     <child link="link_1_shoulder" />
     <axis xyz="0 1 0" />
     <limit lower="-1" upper="1" effort="5" velocity="1" />
+    <dynamics damping="0.3" friction="0.2" />
   </joint>
   <link name="link_2_arm">
     <inertial>
@@ -86,6 +87,7 @@
     <child link="link_2_arm" />
     <axis xyz="0 -1 0" />
     <limit lower="-1" upper="1" effort="5" velocity="1" />
+    <dynamics damping="0.3" friction="0.2" />
   </joint>
   <link name="link_3_upper_forearm">
     <inertial>
@@ -116,6 +118,7 @@
     <child link="link_3_upper_forearm" />
     <axis xyz="0 -1 0" />
     <limit lower="-1" upper="1" effort="5" velocity="1" />
+    <dynamics damping="0.3" friction="0.2" />
   </joint>
   <link name="link_4_forearm">
     <inertial>
@@ -146,6 +149,7 @@
     <child link="link_4_forearm" />
     <axis xyz="0.010353 -0.99993 -0.0059382" />
     <limit lower="-1" upper="1" effort="5" velocity="1" />
+    <dynamics damping="0.3" friction="0.2" />
   </joint>
   <link name="link_5_wrist">
     <inertial>
@@ -176,6 +180,7 @@
     <child link="link_5_wrist" />
     <axis xyz="0 1 0" />
     <limit lower="-1" upper="1" effort="5" velocity="1" />
+    <dynamics damping="0.3" friction="0.2" />
   </joint>
   <link name="link_6_hand">
     <inertial>
@@ -211,7 +216,7 @@
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <mass value="0.0048997" />
-      <inertia ixx="2.0097E-09" ixy="-3.0673E-09" ixz="-6.3297E-10" iyy="4.9761E-09" iyz="-3.9668E-10" izz="6.8221E-09" />
+      <inertia ixx="0.1" ixy="0.1" ixz="0.1" iyy="0.1" iyz="0.1" izz="0.1" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -239,9 +244,9 @@
   
   <link name="tip_gripper_servo">
     <inertial>
-      <origin xyz="0.028047 -0.000564 0.0049632" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <mass value="0.010676" />
-      <inertia ixx="8.9609E-09" ixy="6.3808E-09" ixz="-2.6788E-08" iyy="1.7457E-07" iyz="7.7239E-10" izz="1.7361E-07" />
+      <inertia ixx="0.1" ixy="0.1" ixz="0.1" iyy="0.1" iyz="0.1" izz="0.1" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -271,7 +276,7 @@
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <mass value="0.0051273" />
-      <inertia ixx="2.3661E-09" ixy="1.1076E-09" ixz="5.5775E-10" iyy="8.8855E-09" iyz="-6.98E-11" izz="1.1181E-08" />
+      <inertia ixx="0.1" ixy="0.1" ixz="0.1" iyy="0.1" iyz="0.1" izz="0.1" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -300,7 +305,7 @@
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <mass value="0.010676" />
-      <inertia ixx="1.6298E-07" ixy="-2.1098E-09" ixz="-4.8536E-08" iyy="1.7457E-07" iyz="-6.0724E-09" izz="1.9597E-08" />
+      <inertia ixx="0.1" ixy="0.1" ixz="0.1" iyy="0.1" iyz="0.1" izz="0.1" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -330,8 +335,7 @@
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <mass value="0.0018597" />
-      <inertia ixx="2.3350521316943E-09" ixy="3.15938078443685E-09" ixz="-1.08844692176622E-09"
-       iyy="7.82558758772591E-08" iyz="4.39516056818752E-11" izz="8.05606441237718E-08" />
+      <inertia ixx="0.1" ixy="0.1" ixz="0.1" iyy="0.1" iyz="0.1" izz="0.1" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -361,8 +365,7 @@
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <mass value="0.0018597" />
-      <inertia ixx="2.3203E-09" ixy="-3.1597E-09" ixz="1.7754E-10" 
-       iyy="7.8256E-08" iyz="7.1682E-12" izz="8.0575E-08" />
+      <inertia ixx="0.1" ixy="0.1" ixz="0.1" iyy="0.1" iyz="0.1" izz="0.1" />
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -387,5 +390,8 @@
     <axis xyz="0 1 0" />
     <limit lower="-1" upper="1" effort="5" velocity="1" />
     <mimic joint="gripper_idol_gear_joint" multiplier="1" offset="0"/> 
-  </joint>
+  </joint> -->
+  <gazebo reference="base_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
 </robot>
