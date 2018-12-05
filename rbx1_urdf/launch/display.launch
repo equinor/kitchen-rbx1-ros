@@ -1,7 +1,7 @@
 <launch>
   <arg name="model" />
   <arg name="gui" default="true"/>
-    <arg name="rviz_config" default="$(find rbx1_urdf)/rviz/urdf.rviz" />
+  <arg name="rviz_config" default="$(find rbx1_urdf)/rviz/urdf.rviz" />
   <param name="robot_description" textfile="$(find rbx1_urdf)/urdf/rbx1.urdf" />
   <param name="use_gui" value="$(arg gui)" />
   <node name="joint_state_publisher" 

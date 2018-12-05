@@ -14,6 +14,7 @@ mkdir -p ~/catkin_ws/src
 ```sh
 git clone https://github.com/Statoil/rbx1_ros
 ```
+* Also clone `git clone https://github.com/roboticsgroup/roboticsgroup_gazebo_plugins.git` to the src folder. TODO: Make custom mimic plugin / install script /remove?
 * Build packages with catkin
 ```sh
 cd ~/catkin_ws
@@ -39,6 +40,40 @@ To view the model in Gazebo:
 ```sh
 roslaunch rbx1_urdf gazebo.launch
 ```
+
+
+
+### rbx1_control
+Package contains everything related to robot control. Contains config files for joints and gripper and launch file for both real and simulated RBX1.
+
+To launch the model with ROS controllers:
+```sh
+roslaunch rbx1_urdf rbx1.launch
+```
+
+Move the robot by publishing to the `/rbx1_joint_controller/command` topic:
+```sh
+rostopic pub  /rbx1_joint_controller/command std_msgs/Float64MultiArray "layout:
+  dim:
+  - label: ''
+    size: 6
+    stride: 1
+  data_offset: 0
+data: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]"
+```
+
+To move gripper use this command:
+```sh
+rostopic pub  /rbx1_gripper_controller/command std_msgs/Float64MultiArray "layout:
+  dim:
+  - label: ''
+    size: 2
+    stride: 1
+  data_offset: 0
+data: [1.0, -1.0]"
+```
+
+
 
 <!-- ## Areas to improve
 ### URDF model
