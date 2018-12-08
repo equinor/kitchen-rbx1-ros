@@ -1,0 +1,4 @@
+<launch>
+<node name="joint_states" pkg="rbx1_slush" type="joint_states_publisher.py"/>
+<node name="move_robot" pkg="rbx1_slush" type="joint_command_subscriber.py" output="screen"/>
+</launch>
