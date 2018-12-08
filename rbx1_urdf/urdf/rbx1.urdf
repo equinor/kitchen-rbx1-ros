@@ -55,7 +55,7 @@
     </collision>
   </link>
   <joint name="joint_1_base_shoulder" type="revolute">
-    <origin xyz="0 -0.2425 0" rpy="1.5708 9.5417E-17 2.7766" />
+    <origin xyz="0 -0.2425 0" rpy="1.5708 9.5417E-17 0" />
     <parent link="base_link" />
     <child link="link_1_shoulder" />
     <axis xyz="0 1 0" />
@@ -95,7 +95,7 @@
     </collision>
   </link>
   <joint name="joint_2_shoulder_arm" type="revolute">
-    <origin xyz="0 0.18264 0" rpy="-3.1416 0.95134 1.5708" />
+    <origin xyz="0 0.18264 0" rpy="-3.1416 1.5708 1.5708" />
     <parent link="link_1_shoulder" />
     <child link="link_2_arm" />
     <axis xyz="0 -1 0" />
@@ -136,7 +136,7 @@
     </collision>
   </link>
   <joint name="joint_3_arm_upper_forearm" type="revolute">
-    <origin xyz="0 0 -0.22112" rpy="-3.1416 0.98126 -3.1416" />
+    <origin xyz="0 0 -0.22112" rpy="-3.1416 1.5708 -3.1416" />
     <parent link="link_2_arm" />
     <child link="link_3_upper_forearm" />
     <axis xyz="0 -1 0" />
@@ -177,7 +177,7 @@
     </collision>
   </link>
   <joint name="joint_4_upper_forearm_forearm" type="revolute">
-    <origin xyz="0.16988 -0.00099213 0" rpy="3.1416 -1.2279 1.5708" />
+    <origin xyz="0.16988 -0.00099213 0" rpy="3.1416 1.5708   1.5708" />
     <parent link="link_3_upper_forearm" />
     <child link="link_4_forearm" />
     <axis xyz="0.010353 -0.99993 -0.0059382" />
@@ -217,7 +217,7 @@
     </collision>
   </link>
   <joint name="joint_5_forearm_wrist" type="revolute">
-    <origin xyz="-0.0021346 0.053041 0.0016936" rpy="-1.5639 -0.091135 -0.00062919" />
+    <origin xyz="-0.0021346 0.053041 0.0016936" rpy="-1.5639 -0.091135 -1.0472" />
     <parent link="link_4_forearm" />
     <child link="link_5_wrist" />
     <axis xyz="0 1 0" />
