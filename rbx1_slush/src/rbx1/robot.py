@@ -13,16 +13,16 @@ class Robot:
             joint.setMicroSteps(16)
 
         #some initalization stuff that needs cleanup
-        joints[0].setMaxSpeed(30)
-        joints[1].setMaxSpeed(30)
+        joints[0].setMaxSpeed(15)
+        joints[1].setMaxSpeed(40)
         joints[2].setMaxSpeed(30)
-        joints[3].setMaxSpeed(30)
-        joints[4].setMaxSpeed(30)
-        joints[5].setMaxSpeed(30)
+        joints[3].setMaxSpeed(20)
+        joints[4].setMaxSpeed(15)
+        joints[5].setMaxSpeed(10)
 
         #joint current limits. Still setting manually becuase testing (hold A, run A, acc A, dec, A)
-        joints[0].setCurrent(65, 85, 75, 70)
-        joints[1].setCurrent(65, 85, 85, 65)
+        joints[0].setCurrent(65, 70, 60, 70)
+        joints[1].setCurrent(65, 65, 65, 65)
         joints[2].setCurrent(50, 50, 50, 50)
         joints[3].setCurrent(75, 75, 75, 75)
         joints[4].setCurrent(85, 85, 85, 85)
