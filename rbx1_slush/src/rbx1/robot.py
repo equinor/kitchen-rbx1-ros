@@ -1,25 +1,24 @@
 import RPi.GPIO as GPIO
 import Slush
-from .Axis import Axis, NullAxis
 
 class Robot:
     def __init__(self):
         #setup all of the axis for the SlushEngine
         Slush.sBoard()
         joints = [Slush.Motor(0), Slush.Motor(1), Slush.Motor(2), Slush.Motor(3), Slush.Motor(4), Slush.Motor(5)]
-
+        
         #reset the joints to clear previous errors
         for joint in joints:
             joint.resetDev()
             joint.setMicroSteps(16)
 
         #some initalization stuff that needs cleanup
-        joints[0].setMaxSpeed(50)
-        joints[1].setMaxSpeed(150)
-        joints[2].setMaxSpeed(250)
-        joints[3].setMaxSpeed(150)
-        joints[4].setMaxSpeed(150)
-        joints[5].setMaxSpeed(150)
+        joints[0].setMaxSpeed(30)
+        joints[1].setMaxSpeed(30)
+        joints[2].setMaxSpeed(30)
+        joints[3].setMaxSpeed(30)
+        joints[4].setMaxSpeed(30)
+        joints[5].setMaxSpeed(30)
 
         #joint current limits. Still setting manually becuase testing (hold A, run A, acc A, dec, A)
         joints[0].setCurrent(65, 85, 75, 70)
@@ -33,7 +32,7 @@ class Robot:
             Axis(-5000,5000,joints[0]),
             Axis(-12500,12500,joints[1]),
             Axis(-22500,22500,joints[2]),
-            NullAxis(),
+            Axis(-3500,3500, joints[3]),
             Axis(-4000,4000,joints[4]),
             Axis(-1650,1650,joints[5])
         ]

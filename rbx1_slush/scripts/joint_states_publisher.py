@@ -25,6 +25,5 @@ def joint_state_publisher():
 if __name__=='__main__':
     try:
         joint_state_publisher()
-        joint_command_subscriber()
     except rospy.ROSInterruptException:
         pass
