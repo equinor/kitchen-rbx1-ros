@@ -1,7 +1,9 @@
 try:
     import RPi.GPIO as GPIO
     from .robot import Robot
-except ImportError:
+except ImportError as exception:
+    print("Using mock robot implementation")
+    print(exception)
     from .mock_robot import MockRobot as Robot
 
 class RobotSingleton:
