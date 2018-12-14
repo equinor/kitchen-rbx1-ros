@@ -38,4 +38,5 @@ class Axis():
     def getPositionInRad(self):
         # step / stepPerRevolution = rad / radPerRevolution
         step = self._driver.getPosition()
-        return step / self._stepsPerRevolution * Axis.radPerRevolution
+        stepInRad = step * Axis.radPerRevolution/ float(self._stepsPerRevolution)
+        return stepInRad
