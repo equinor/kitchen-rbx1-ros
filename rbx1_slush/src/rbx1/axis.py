@@ -32,8 +32,8 @@ class Axis():
     def goToRad(self, rad):
         # step / stepPerRevolution = rad / radPerRevolution
         step = rad * self._stepsPerRevolution / Axis.radPerRevolution
-        print("Go top", step)
-        self._driver.goTo(step)
+        withinLimitStep = max(min(step, self._max), self._min)
+        self._driver.goTo(withinLimitStep)
 
     def getPositionInRad(self):
         # step / stepPerRevolution = rad / radPerRevolution
