@@ -1,42 +1,26 @@
 import RPi.GPIO as GPIO
 import Slush
 
+from .axis import Axis
+
 class Robot:
+
     def __init__(self):
         #setup all of the axis for the SlushEngine
         Slush.sBoard()
-        joints = [Slush.Motor(0), Slush.Motor(1), Slush.Motor(2), Slush.Motor(3), Slush.Motor(4), Slush.Motor(5)]
         
-        #reset the joints to clear previous errors
-        for joint in joints:
-            joint.resetDev()
-            joint.setMicroSteps(16)
-
-        #some initalization stuff that needs cleanup
-        joints[0].setMaxSpeed(15)
-        joints[1].setMaxSpeed(40)
-        joints[2].setMaxSpeed(30)
-        joints[3].setMaxSpeed(20)
-        joints[4].setMaxSpeed(15)
-        joints[5].setMaxSpeed(10)
-
-        #joint current limits. Still setting manually becuase testing (hold A, run A, acc A, dec, A)
-        joints[0].setCurrent(65, 70, 60, 70)
-        joints[1].setCurrent(65, 65, 65, 65)
-        joints[2].setCurrent(50, 50, 50, 50)
-        joints[3].setCurrent(75, 75, 75, 75)
-        joints[4].setCurrent(85, 85, 85, 85)
-        joints[5].setCurrent(65,65, 65, 65)
-        
+        # steps per revolution obtained by manual obervation of steps to do 90 degree
+        # multiplying by four to get steps per 360 degree.
         self._axis = [
-            Axis(-5000,5000,joints[0]),
-            Axis(-12500,12500,joints[1]),
-            Axis(-22500,22500,joints[2]),
-            Axis(-3500,3500, joints[3]),
-            Axis(-4000,4000,joints[4]),
-            Axis(-1650,1650,joints[5])
+            Axis(Slush.Motor(1), min=-8000, max=5500, speed=40, current=[65, 65, 65, 65], steps=32000), #Shoulder
+            Axis(Slush.Motor(0), min=-4000, max=4000, speed=15, current=[65, 70, 60, 70], steps=16000), #Arm
+            Axis(Slush.Motor(2), min=-20000, max=20000, speed=30, current=[50, 50, 50, 50], steps=64000),
+            Axis(Slush.Motor(3), min=-3000, max=3000, speed=20, current=[75, 75, 75, 75], steps=6000),
+            Axis(Slush.Motor(4), min=-4000, max=4000, speed=15, current=[85, 85, 85, 85], steps=14000),
+            Axis(Slush.Motor(5), min=-1650, max=1650, speed=10, current=[65,65, 65, 65], steps=3600)
         ]
-        self._target = list(map(lambda a: a.getPosition(), self._axis))
+
+        self._target = list(map(lambda a: a.getPositionInRad(), self._axis))
 
     def isBusy(self):
         for axis in self._axis:
@@ -49,14 +33,14 @@ class Robot:
         
         for axis, value in zip(self._axis, self._target):
             if (value is not None):
-                axis.goTo(value)
+                axis.goToRad(value)
 
 
     def getStatus(self): 
         return {
             'busy': self.isBusy(),
             'targetPos' : self._target,
-            'currentPos' : list(map(lambda a: a.getPosition(), self._axis))
+            'currentPos' : list(map(lambda a: a.getPositionInRad(), self._axis))
         }
 
 class Gripper:
@@ -76,28 +60,3 @@ class Gripper:
     def goTo(self, nStep):
         self._gripper = nStep
         self._pwm.start(self._gripper)
-
-class Axis():
-    def __init__(self, min, max, driver):
-        self._min = min
-        self._max = max
-        self._driver = driver
-
-    def isBusy(self):
-        return self._driver.isBusy()
-    
-    def getPosition(self):
-        return self._fromStep(self._driver.getPosition())
-
-    def goTo(self, pos):
-        self._driver.goTo(self._toStep(pos))
-
-    def _toStep(self, value):
-        value = (value + 1) / 2
-        value = value * (self._max - self._min)
-        return int(value + self._min)
-    
-    def _fromStep(self, value):
-        value -= self._min
-        value = value / (self._max - self._min)
-        return (value * 2) -1

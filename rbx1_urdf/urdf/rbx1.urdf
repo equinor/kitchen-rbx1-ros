@@ -59,7 +59,7 @@
     <parent link="base_link" />
     <child link="link_1_shoulder" />
     <axis xyz="0 1 0" />
-    <limit lower="-1" upper="1" effort="5" velocity="1" />
+    <limit lower="-1.5707975" upper="1.07993" effort="5" velocity="1" />
     <dynamics damping="0.3" friction="0.2" />
   </joint>
   <transmission name="base_shoulder_transmission">
@@ -99,7 +99,7 @@
     <parent link="link_1_shoulder" />
     <child link="link_2_arm" />
     <axis xyz="0 -1 0" />
-    <limit lower="-1" upper="1" effort="5" velocity="1" />
+    <limit lower="-1.5707975" upper="1.5707975" effort="5" velocity="1" />
     <dynamics damping="0.3" friction="0.2" />
   </joint>
   <transmission name="shoulder_arm_transmission">
@@ -140,7 +140,7 @@
     <parent link="link_2_arm" />
     <child link="link_3_upper_forearm" />
     <axis xyz="0 -1 0" />
-    <limit lower="-1" upper="1" effort="5" velocity="1" />
+    <limit lower="-1.9635" upper="1.9635" effort="5" velocity="1" />
     <dynamics damping="0.3" friction="0.2" />
   </joint>
   <transmission name="arm_upper_forearm_transmission">
@@ -181,7 +181,7 @@
     <parent link="link_3_upper_forearm" />
     <child link="link_4_forearm" />
     <axis xyz="0.010353 -0.99993 -0.0059382" />
-    <limit lower="-1" upper="1" effort="5" velocity="1" />
+    <limit lower="-3.141595" upper="3.141595" effort="5" velocity="1" />
     <dynamics damping="0.3" friction="0.2" />
   </joint>
   <transmission name="upper_forearm_forearm_transmission">
@@ -221,7 +221,7 @@
     <parent link="link_4_forearm" />
     <child link="link_5_wrist" />
     <axis xyz="0 1 0" />
-    <limit lower="-1" upper="1" effort="5" velocity="1" />
+    <limit lower="-1.7952" upper="1.7951" effort="5" velocity="1" />
     <dynamics damping="0.3" friction="0.2" />
   </joint>
   <transmission name="forearm_wrist_transmission">
@@ -261,7 +261,7 @@
     <parent link="link_5_wrist" />
     <child link="link_6_hand" />
     <axis xyz="1 0 0" />
-    <limit lower="-1" upper="1" effort="5" velocity="1" />
+    <limit lower="-3.141595" upper="3.141595" effort="5" velocity="1" />
   </joint>
  <transmission name="wrist_hand_transmission">
     <type>transmission_interface/SimpleTransmission</type>
