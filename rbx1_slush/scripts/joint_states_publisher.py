@@ -2,7 +2,6 @@
 import rospy
 from sensor_msgs.msg import JointState
 from std_msgs.msg import Float64MultiArray
-
 from rbx1 import RobotSingleton
 
 def joint_state_publisher():

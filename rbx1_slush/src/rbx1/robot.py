@@ -12,11 +12,11 @@ class Robot:
         # steps per revolution obtained by manual obervation of steps to do 90 degree
         # multiplying by four to get steps per 360 degree.
         self._axis = [
-            Axis(Slush.Motor(1), min=-8000, max=5500, speed=40, current=[65, 65, 65, 65], steps=32000), #Shoulder
-            Axis(Slush.Motor(0), min=-4000, max=4000, speed=15, current=[65, 70, 60, 70], steps=16000), #Arm
-            Axis(Slush.Motor(2), min=-20000, max=20000, speed=30, current=[50, 50, 50, 50], steps=64000),
-            Axis(Slush.Motor(3), min=-3000, max=3000, speed=20, current=[75, 75, 75, 75], steps=6000),
-            Axis(Slush.Motor(4), min=-4000, max=4000, speed=15, current=[85, 85, 85, 85], steps=14000),
+            Axis(Slush.Motor(1), min=-8000, max=5500, speed=10, current=[65, 65, 65, 65], steps=32000), #Shoulder
+            Axis(Slush.Motor(0), min=-4000, max=4000, speed=10, current=[65, 70, 60, 70], steps=16000), #Arm
+            Axis(Slush.Motor(2), min=-20000, max=20000, speed=10, current=[50, 50, 50, 50], steps=64000),
+            Axis(Slush.Motor(3), min=-3000, max=3000, speed=10, current=[75, 75, 75, 75], steps=6000),
+            Axis(Slush.Motor(4), min=-4000, max=4000, speed=10, current=[85, 85, 85, 85], steps=14000),
             Axis(Slush.Motor(5), min=-1650, max=1650, speed=10, current=[65,65, 65, 65], steps=3600)
         ]
 

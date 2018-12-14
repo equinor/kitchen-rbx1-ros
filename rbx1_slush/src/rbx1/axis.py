@@ -16,7 +16,7 @@ class Axis():
             driver.setCurrent(65,65,65,65)
         else:
             driver.setCurrent(*current)
-    
+        print("setting up drive with", speed, current)
         driver.setMaxSpeed(speed)
 
 
@@ -32,6 +32,7 @@ class Axis():
     def goToRad(self, rad):
         # step / stepPerRevolution = rad / radPerRevolution
         step = rad * self._stepsPerRevolution / Axis.radPerRevolution
+        print("Go top", step)
         self._driver.goTo(step)
 
     def getPositionInRad(self):
