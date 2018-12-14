@@ -21,6 +21,8 @@ class Robot:
         ]
 
         self._target = list(map(lambda a: a.getPositionInRad(), self._axis))
+        self._target.insert(0, 0)
+        self._target.insert(0, 0)
 
     def isBusy(self):
         for axis in self._axis:
@@ -37,10 +39,13 @@ class Robot:
 
 
     def getStatus(self): 
+        pos = list(map(lambda a: a.getPositionInRad(), self._axis))
+        pos.insert(0,0)
+        pos.insert(0,0)
         return {
             'busy': self.isBusy(),
             'targetPos' : self._target,
-            'currentPos' : list(map(lambda a: a.getPositionInRad(), self._axis))
+            'currentPos': pos 
         }
 
 class Gripper:
