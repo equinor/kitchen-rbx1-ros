@@ -9,5 +9,5 @@
     <node name="joint_states" pkg="rbx1_slush" type="joint_states_publisher.py" output="log"/>
     <node name="move_robot" pkg="rbx1_slush" type="joint_command_subscriber.py" output="screen"/>
 
-	<node pkg="timed_roslaunch" type="timed_roslaunch.sh" args="5 rbx1_slush slush.launch" name="camera_overview" output="log" />
+	<!-- <node pkg="timed_roslaunch" type="timed_roslaunch.sh" args="5 rbx1_slush camera.launch" name="delay_node" output="log" /> -->
 </launch>
