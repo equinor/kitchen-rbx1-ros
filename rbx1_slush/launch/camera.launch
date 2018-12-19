@@ -1,0 +1,7 @@
+<launch>
+	<node name="overview_camera" pkg="cv_camera" type="cv_camera_node" respawn="true" respawn_delay="5">
+			<param name="image_width" value="640"/>
+			<param name="image_height" value="480"/>
+			<param name="frame_id" value="camera_link"/>
+	</node>
+</launch>
