@@ -1,8 +1,5 @@
 
 <launch>
-
-
-
     <arg name="model" default="$(find rbx1_urdf)/urdf/rbx1.urdf"/>
 
     <include file="$(find rbx1_urdf)/launch/gazebo.launch">
