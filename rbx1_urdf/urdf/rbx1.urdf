@@ -579,7 +579,7 @@
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
         <visualize>1</visualize>
-        <cameraName>rbx1_urdf/overview_camera</cameraName>
+        <cameraName>overview_camera</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera_link</frameName>
