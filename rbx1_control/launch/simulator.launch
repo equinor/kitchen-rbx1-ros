@@ -1,9 +1,7 @@
 
 <launch>
 
-	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
-		<param name="port" value="9090"/>
-	</include>
+
 
     <arg name="model" default="$(find rbx1_urdf)/urdf/rbx1.urdf"/>
 
@@ -11,6 +9,10 @@
         <arg name="model" value="$(arg model)" />
     </include>
 
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+		<param name="port" value="9090"/>
+	</include>
+    
     <rosparam command="load"
         file="$(find rbx1_control)/config/states.yaml"
         ns="rbx1_joint_state_controller" />
