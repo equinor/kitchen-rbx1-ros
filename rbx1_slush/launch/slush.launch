@@ -3,8 +3,11 @@
 
 	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
 		<param name="port" value="9090"/>
+		<param name="output" value="log" />
 	</include>
 
-    <node name="joint_states" pkg="rbx1_slush" type="joint_states_publisher.py"/>
+    <node name="joint_states" pkg="rbx1_slush" type="joint_states_publisher.py" output="log"/>
     <node name="move_robot" pkg="rbx1_slush" type="joint_command_subscriber.py" output="screen"/>
+
+	<node pkg="timed_roslaunch" type="timed_roslaunch.sh" args="5 rbx1_slush slush.launch" name="camera_overview" output="log" />
 </launch>
