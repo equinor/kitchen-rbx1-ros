@@ -19,7 +19,8 @@ class Gripper:
         return ((self._gripper - 7) / 10) * 1.5708
 
     def goToInRad(self, rad):
-        nStep = ((rad / 15708) * 10) + 7
+        nStep = ((rad / 1.5708) * 10) + 7
+        print("Gripper go to: ", rad, nStep)
         self.goTo(int(nStep))
         
     def goTo(self, nStep):

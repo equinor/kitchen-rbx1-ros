@@ -3,9 +3,10 @@ class Axis():
     
     radPerRevolution = 6.28319
 
-    def __init__(self, driver, minimum=0, maximum=0, speed=20, microstep=16, current=None, steps=3200):
+    def __init__(self, driver, minimum=0, maximum=0, speed=20, microstep=16, current=None, steps=3200, negate=False):
         self._minimum = minimum
         self._maximum = maximum
+        self._negate = negate
         self._stepsPerRevolution = steps
         self._microstep = microstep
         self._driver = driver
@@ -32,7 +33,7 @@ class Axis():
     def goToRad(self, rad):
         # step / stepPerRevolution = rad / radPerRevolution
         if self._driver.isBusy(): return
-        
+        if self._negate: rad = -rad
         step = rad * self._stepsPerRevolution / Axis.radPerRevolution
         withinLimitStep = max(min(step, self._maximum), self._minimum)
         print("Go to step: ", withinLimitStep)
