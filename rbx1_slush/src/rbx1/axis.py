@@ -31,7 +31,7 @@ class Axis():
 
     def goToRad(self, rad):
         # step / stepPerRevolution = rad / radPerRevolution
-        if (self._Driver.isBusy()) return
+        if self._driver.isBusy(): return
         
         step = rad * self._stepsPerRevolution / Axis.radPerRevolution
         withinLimitStep = max(min(step, self._maximum), self._minimum)

@@ -7,7 +7,7 @@ from rbx1 import RobotSingleton
 def joint_state_publisher():
     rospy.init_node('joint_state_publisher')
     pub=rospy.Publisher('joint_states', JointState, queue_size=10)
-    rate= rospy.Rate(30)
+    rate= rospy.Rate(20)
     robot = RobotSingleton.getInstance()
 
     while not rospy.is_shutdown():

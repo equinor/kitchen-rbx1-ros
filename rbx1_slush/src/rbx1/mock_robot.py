@@ -16,6 +16,8 @@ class MockRobot:
     def runRobot(self, points):
         print('runRobot', points)
 
+    def runGripper(self, points):
+        print('runGripper', points)
 
     def getStatus(self): 
         return {

@@ -20,6 +20,8 @@ catkin_python_setup()
 
 install(PROGRAMS
      scripts/joint_command_subscriber.py
+     scripts/joint_command_subscriber.py
+     scripts/joint_states_publisher.py
      DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
