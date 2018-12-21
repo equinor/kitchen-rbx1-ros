@@ -20,8 +20,10 @@ class Gripper:
 
     def goToInRad(self, rad):
         nStep = ((rad / 1.5708) * 10) + 7
-        print("Gripper go to: ", rad, nStep)
-        self.goTo(int(nStep))
+        nStep = max(7, min(int(nStep), 17))
+        if nStep != self.getPosition():
+            print("Gripper go to: ", rad, nStep)
+            self.goTo(nStep)
         
     def goTo(self, nStep):
         if nStep >= 0 and nStep <= 17:
