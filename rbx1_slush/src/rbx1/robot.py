@@ -39,8 +39,8 @@ class Robot:
             if (value is not None):
                 axis.goToRad(value)
 
-    def runGripper(self, points):
-        self._gripper.goToInRad(points[0])
+    def runGripper(self, point):
+        self._gripper.goToInRad(point)
 
     def getStatus(self): 
         pos = list(map(lambda a: a.getPositionInRad(), self._axis))

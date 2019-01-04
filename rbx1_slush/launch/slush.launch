@@ -6,6 +6,7 @@
 		<param name="output" value="log" />
 	</include>
 
+    <node name="robot_server" pkg="rbx1_slush" type="robot_server.py" output="screen"/>
     <node name="joint_states" pkg="rbx1_slush" type="joint_states_publisher.py" output="log"/>
     <node name="move_robot" pkg="rbx1_slush" type="joint_command_subscriber.py" output="screen"/>
     <node name="move_gripper" pkg="rbx1_slush" type="gripper_command_subscriber.py" output="screen"/>
