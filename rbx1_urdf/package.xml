@@ -8,7 +8,7 @@
     to display rbx1_urdf model</p>
   </description>
   <maintainer email="ovatn@equinor.com">Olav Vatne</maintainer>
-  <license>TODO</license>
+  <license>MIT</license>
   <!-- <url type="website">http://wiki.ros.org/rbx1_urdf</url> -->
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>gazebo</build_depend>

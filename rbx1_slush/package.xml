@@ -7,7 +7,7 @@
   <maintainer email="olavvatne@gmail.com">olav</maintainer>
 
 
-  <license>TODO</license>
+  <license>MIT</license>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
