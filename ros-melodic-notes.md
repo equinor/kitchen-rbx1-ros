@@ -28,7 +28,7 @@ git clone -b melodic-devel https://github.com/MoriKen254/timed_roslaunch.git
 
 ## Getting started - RPi
 
-Note - Ubiquity use ROS Kinetic.
+Note - Ubiquity use ROS Kinetic. It remains to see if the code will still run on the Pi.
 
 * Install [Ubiquity](https://downloads.ubiquityrobotics.com) RPi Lubuntu image on a RPi. The image has ROS preinstalled.
 * Connect to a network.

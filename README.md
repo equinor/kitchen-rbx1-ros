@@ -61,7 +61,7 @@ source devel/setup.bash
 
 ## Getting started - RPi
 * Install [Ubiquity](https://downloads.ubiquityrobotics.com) RPi Lubuntu image on a RPi. The image has ROS preinstalled.
-* Connect to a network.
+* Connect to a [network](./pi-network-configuraton.md)
 * Clone repo in `catkin_ws/src`.
 * Delete the `rbx1_urdf` folder.
 * Install SlushEngine:
