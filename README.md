@@ -1,3 +1,5 @@
+ARCHIVED: Experiment for Innovation Kitchen in 2019. Not in use and therefore archived.
+
 # RBX1 - ROS
 ROS packages for the RBX1 remix.
 ![Gazebo simulator](../assets/gazebo.png?raw=true)
